@@ -1,14 +1,1220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=frontend/index.html">
-  <title>Balaji M | Portfolio</title>
-  <script>
-    window.location.replace("frontend/index.html");
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balaji M | Information Science & Technology Portfolio</title>
+  <meta name="description" content="Personal Portfolio of Balaji M - Information Science & Technology Student at Presidency University. Skilled in Python, SQL, Excel, and Web Development.">
+  <meta name="keywords" content="Balaji M, Portfolio, Python, Data Analytics, Excel, Power BI, SQL, Presidency University, Bangalore">
+  <meta name="author" content="Balaji M">
+  
+  <!-- Favicon Icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%236366f1'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='48' font-family='sans-serif' font-weight='800' fill='white'>BM</text></svg>">
+  
+  <!-- Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p>Redirecting to <a href="frontend/index.html">Balaji M Portfolio</a>...</p>
+
+  <!-- Ambient Glow Orbs for modern glass aesthetic -->
+  <div class="bg-ambient-orb bg-orb-1"></div>
+  <div class="bg-ambient-orb bg-orb-2"></div>
+  <div class="bg-ambient-orb bg-orb-3"></div>
+
+  <!-- ========================================================
+       1. NAVIGATION BAR
+       ======================================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-brand" aria-label="Balaji M Home">
+        <span class="brand-badge">BM</span>
+        <span class="brand-name">Balaji M<span class="brand-dot">.</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Navbar Actions (Theme Switch + Hamburger) -->
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Dark and Light Mode" title="Toggle Theme">
+          <!-- Sun Icon (shown in Dark mode) -->
+          <svg id="sunIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (shown in Light mode) -->
+          <svg id="moonIcon" style="display: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================
+       2. HERO SECTION
+       ======================================================== -->
+  <section class="hero-section" id="home">
+    <div class="container hero-grid">
+      <!-- Left Column: Introduction & Call-To-Actions -->
+      <div class="hero-content reveal">
+        <div class="hero-greeting">
+          <span class="greeting-dot"></span>
+          <span>Open to Opportunities</span>
+        </div>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Balaji M</span>
+        </h1>
+
+        <h2 class="hero-subtitle">
+          Information Science &amp; Technology Student | Python | Data Analytics | Web Development
+        </h2>
+
+        <p class="hero-desc">
+          I am an Information Science and Technology student at Presidency University with practical skills in Python, SQL, and Excel. I enjoy analyzing data, building web pages, and solving real-world challenges. Eager to contribute and grow with great teams.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <span>View My Projects</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <span>Let's Connect</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Quick Info Chips -->
+        <div class="hero-chips">
+          <div class="hero-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Bangalore, India</span>
+          </div>
+          <a href="https://github.com/balu250" target="_blank" rel="noopener noreferrer" class="hero-chip">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            <span>GitHub: balu250</span>
+          </a>
+          <a href="mailto:balajisheety08@gmail.com" class="hero-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>balajisheety08@gmail.com</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Profile Photo Showcase Card -->
+      <div class="hero-visuals reveal reveal-delay-1">
+        <div class="hero-card-container">
+          <!-- Backdrop Glow -->
+          <div class="hero-backdrop-glow"></div>
+
+          <!-- Main Profile Photo Card -->
+          <div class="hero-profile-card">
+            <div class="hero-img-wrapper">
+              <img src="assets/profile.jpg" alt="Balaji M - Information Science Student" class="hero-profile-photo" />
+              <div class="hero-photo-status">
+                <span class="status-live-dot"></span>
+                <span>Available for Opportunities</span>
+              </div>
+            </div>
+
+            <div class="hero-card-bottom">
+              <div>
+                <div class="hero-card-name">Balaji M</div>
+                <div class="hero-card-role">Presidency University (2023–2027)</div>
+              </div>
+              <div class="hero-card-cgpa">
+                <div class="hero-card-cgpa-val">7.15</div>
+                <div class="hero-card-cgpa-lbl">CGPA</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Badges Around the Card -->
+          <div class="floating-badge badge-python">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11.927 0c-3.175 0-5.748 1.487-5.748 4.093v2.864h5.882v.818H3.842C1.69 7.775 0 9.774 0 12.355c0 2.58 1.63 4.417 3.842 4.417h2.247v-3.136c0-2.38 2.05-4.323 4.498-4.323h5.747V4.093C16.334 1.517 14.507 0 11.927 0zm-2.02 1.947c.563 0 1.02.457 1.02 1.02 0 .564-.457 1.02-1.02 1.02-.564 0-1.02-.456-1.02-1.02 0-.563.456-1.02 1.02-1.02z" fill="#38bdf8"/>
+              <path d="M12.073 24c3.175 0 5.748-1.487 5.748-4.093v-2.864h-5.882v-.818h8.219C22.31 16.225 24 14.226 24 11.645c0-2.58-1.63-4.417-3.842-4.417h-2.247v3.136c0 2.38-2.05 4.323-4.498 4.323H7.666v5.22c0 2.576 1.827 4.093 4.407 4.093zm2.02-1.947c-.563 0-1.02-.457-1.02-1.02 0-.564.457-1.02 1.02-1.02.564 0 1.02.456 1.02 1.02 0 .563-.456 1.02-1.02 1.02z" fill="#f59e0b"/>
+            </svg>
+            <span>Python</span>
+          </div>
+
+          <div class="floating-badge badge-excel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <path d="M3 9h18"></path>
+              <path d="M9 21V9"></path>
+            </svg>
+            <span>Data Analytics</span>
+          </div>
+
+          <div class="floating-badge badge-sql">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+            </svg>
+            <span>SQL &amp; Databases</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down to About section">
+      <span>Scroll Down</span>
+      <div class="mouse-icon">
+        <div class="wheel-dot"></div>
+      </div>
+    </a>
+  </section>
+
+  <!-- ========================================================
+       3. ABOUT ME SECTION
+       ======================================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span>About Me</span>
+        </div>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        <p class="section-subtitle">
+          An Information Science student focused on software development and data analysis.
+        </p>
+      </div>
+
+      <!-- Profile Intro Card with Photo -->
+      <div class="about-hero-block reveal">
+        <div class="about-img-box">
+          <img src="assets/profile.jpg" alt="Balaji M" class="about-img" />
+        </div>
+        <div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Hi, I'm Balaji M</h3>
+          <p style="color: var(--text-highlight); font-weight: 600; margin-bottom: 12px;">
+            Information Science &amp; Technology Student at Presidency University
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.98rem;">
+            I enjoy turning data into clear insights and building clean, responsive web pages. With a solid grounding in Python, SQL, and Excel, I focus on practical problem solving and continuous improvement. I am always open to new learning opportunities and collaborating on impactful team projects.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: Career Objective Quote Card -->
+        <div class="about-card reveal">
+          <div>
+            <div class="about-objective-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+              <span>Career Objective</span>
+            </div>
+            <blockquote class="about-objective-quote">
+              "Motivated and detail-oriented IT graduate with a strong foundation in programming, databases, and web development. Skilled in Python, SQL and Excel with hands-on experience in academic projects. Eager to apply technical knowledge in real-world settings and contribute effectively to team-driven environments. Quick learner with a passion for technology, problem-solving, and continuous improvement."
+            </blockquote>
+          </div>
+
+          <div class="about-highlights-list">
+            <div class="skill-pill-item" style="margin-bottom: 8px;">
+              <span class="skill-name">📍 Location: Bangalore, India</span>
+              <span class="skill-tag-badge">Karnataka</span>
+            </div>
+            <div class="skill-pill-item">
+              <span class="skill-name">🎓 Presidency University</span>
+              <span class="skill-tag-badge">2023 - 2027</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Core Competencies Grid -->
+        <div class="about-features-grid reveal reveal-delay-1">
+          <div class="feature-box">
+            <div class="feature-icon-wrapper purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature-title">Programming &amp; Web</h3>
+            <p class="feature-desc">
+              Writing code in Python, Java, and C, and creating modern web pages using HTML and CSS.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3 class="feature-title">Data Analytics &amp; BI</h3>
+            <p class="feature-desc">
+              Organizing numbers and building clean charts and interactive dashboards in Excel and Power BI.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper emerald">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Relational Databases</h3>
+            <p class="feature-desc">
+              Managing structured data and writing clear SQL queries in MySQL and PostgreSQL.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper amber">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature-title">Continuous Learning</h3>
+            <p class="feature-desc">
+              Quick to learn new tools, curious about modern technology, and focused on solving practical challenges.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       4. EDUCATION SECTION
+       ======================================================== -->
+  <section class="section" id="education" style="background: rgba(255, 255, 255, 0.015);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          <span>Education</span>
+        </div>
+        <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+        <p class="section-subtitle">
+          My academic studies in Information Science and Technology in Bangalore, India.
+        </p>
+      </div>
+
+      <div class="education-container">
+        <div class="edu-timeline-card reveal">
+          <div class="edu-icon-badge">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+          </div>
+
+          <div class="edu-content">
+            <div class="edu-header-row">
+              <h3 class="edu-degree">B.Tech in Information Science and Technology</h3>
+              <div class="edu-period-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>2023 – 2027</span>
+              </div>
+            </div>
+
+            <div class="edu-institution">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <span>Presidency University, India</span>
+            </div>
+
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+              Undergraduate program covering programming fundamentals, data structures, algorithms, relational databases, data analytics, and software development.
+            </p>
+
+            <div class="edu-meta-grid">
+              <div class="edu-meta-item">
+                <span class="edu-meta-label">Cumulative Score:</span>
+                <span class="edu-meta-value">CGPA: 7.15 / 10</span>
+              </div>
+              <div class="edu-meta-item">
+                <span class="edu-meta-label">Location:</span>
+                <span style="font-weight: 600; color: var(--text-primary);">Bangalore, India</span>
+              </div>
+              <div class="edu-meta-item">
+                <span class="edu-meta-label">Status:</span>
+                <span style="font-weight: 600; color: var(--color-cyan);">Undergraduate Student</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       5. TECHNICAL SKILLS SECTION
+       ======================================================== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="4 7 4 4 20 4 20 7"></polyline>
+            <line x1="9" y1="20" x2="15" y2="20"></line>
+            <line x1="12" y1="4" x2="12" y2="20"></line>
+          </svg>
+          <span>Skills</span>
+        </div>
+        <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+        <p class="section-subtitle">
+          Technologies and tools I use to analyze data and build applications.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="skills-filter-container reveal">
+        <button class="filter-btn active" data-filter="all">All Skills</button>
+        <button class="filter-btn" data-filter="programming">Programming</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="databases">Databases</button>
+        <button class="filter-btn" data-filter="analytics">Data Analytics</button>
+        <button class="filter-btn" data-filter="tools">Tools</button>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div class="skills-grid">
+        <!-- 1. Programming Languages -->
+        <div class="skill-category-card reveal" data-category="programming">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon" style="background: rgba(99, 102, 241, 0.15); color: var(--color-primary);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="skill-cat-title">Programming Languages</h3>
+          </div>
+
+          <div class="skill-items-list">
+            <!-- Python -->
+            <div class="skill-pill-item">
+              <div class="skill-pill-left">
+                <svg class="skill-icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M11.927 0c-3.175 0-5.748 1.487-5.748 4.093v2.864h5.882v.818H3.842C1.69 7.775 0 9.774 0 12.355c0 2.58 1.63 4.417 3.842 4.417h2.247v-3.136c0-2.38 2.05-4.323 4.498-4.323h5.747V4.093C16.334 1.517 14.507 0 11.927 0zm-2.02 1.947c.563 0 1.02.457 1.02 1.02 0 .564-.457 1.02-1.02 1.02-.564 0-1.02-.456-1.02-1.02 0-.563.456-1.02 1.02-1.02z" fill="#38bdf8"/>
+                  <path d="M12.073 24c3.175 0 5.748-1.487 5.748-4.093v-2.864h-5.882v-.818h8.219C22.31 16.225 24 14.226 24 11.645c0-2.58-1.63-4.417-3.842-4.417h-2.247v3.136c0 2.38-2.05 4.323-4.498 4.323H7.666v5.22c0 2.576 1.827 4.093 4.407 4.093zm2.02-1.947c-.563 0-1.02-.457-1.02-1.02 0-.564.457-1.02 1.02-1.02.564 0 1.02.456 1.02 1.02 0 .563-.456 1.02-1.02 1.02z" fill="#f59e0b"/>
+                </svg>
+                <span class="skill-name">Python</span>
+              </div>
+              <span class="skill-tag-badge">Core</span>
+            </div>
+
+            <!-- Java -->
+            <div class="skill-pill-item">
+              <div class="skill-pill-left">
+                <svg class="skill-icon-svg" viewBox="0 0 24 24" fill="#ea580c">
+                  <path d="M7.74 16.89c-1.37.28-2.85.65-2.85 1.57 0 1.48 4.22 1.63 7.15 1.63 2.93 0 7.13-.15 7.13-1.63 0-.91-1.45-1.28-2.82-1.56-.95.83-2.67 1.34-4.31 1.34-1.64 0-3.34-.51-4.3-1.35zm-2.07 3.93c1.69.57 4.14.77 6.37.77 2.22 0 4.67-.2 6.36-.77-1.66 1.3-4.83 1.58-6.36 1.58-1.53 0-4.71-.28-6.37-1.58zM14.97 3c.09 1.15-.65 2.15-1.5 3.09-.86.95-1.74 1.89-1.74 3.23 0 1.76 1.51 2.82 2.62 4.04.83.91 1.42 1.95 1.42 3.27 0 .19-.01.37-.04.55 1.59-.69 2.51-1.79 2.51-3.21 0-2.3-2.05-3.66-3.32-5.07-.94-1.05-1.48-1.92-1.48-3.08 0-.94.61-1.78 1.53-2.82z"/>
+                </svg>
+                <span class="skill-name">Java</span>
+              </div>
+              <span class="skill-tag-badge">OOP</span>
+            </div>
+
+            <!-- C -->
+            <div class="skill-pill-item">
+              <div class="skill-pill-left">
+                <svg class="skill-icon-svg" viewBox="0 0 24 24" fill="#3b82f6">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.83 14.19c-.93.63-2.02.97-3.18.97-3.04 0-5.51-2.47-5.51-5.51 0-3.04 2.47-5.51 5.51-5.51 1.16 0 2.25.34 3.18.97l-1.22 1.63c-.59-.41-1.29-.63-2.02-.63-1.94 0-3.52 1.58-3.52 3.52s1.58 3.52 3.52 3.52c.73 0 1.43-.22 2.02-.63l1.22 1.65z"/>
+                </svg>
+                <span class="skill-name">C</span>
+              </div>
+              <span class="skill-tag-badge">Systems</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Web Development -->
+        <div class="skill-category-card reveal reveal-delay-1" data-category="web">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon" style="background: rgba(6, 182, 212, 0.15); color: var(--color-cyan);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <h3 class="skill-cat-title">Web</h3>
+          </div>
+
+          <div class="skill-items-list">
+            <!-- HTML -->
+            <div class="skill-pill-item">
+              <div class="skill-pill-left">
+                <svg class="skill-icon-svg" viewBox="0 0 24 24" fill="#e34f26">
+                  <path d="M1.5 0h21l-1.91 21.48L12 24l-8.59-2.52L1.5 0zm17.06 4.67H5.44l.44 5.01h11.75l-.46 5.16L12 16.14l-5.17-1.3-.23-2.61H4.14l.43 4.88 7.43 1.95 7.43-1.95.84-9.45H18.56z"/>
+                </svg>
+                <span class="skill-name">HTML</span>
+              </div>
+              <span class="skill-tag-badge">Semantic</span>
+            </div>
+
+            <!-- CSS -->
+            <div class="skill-pill-item">
+              <div class="skill-pill-left">
+                <svg class="skill-icon-svg" viewBox="0 0 24 24" fill="#1572b6">
+                  <path d="M1.5 0h21l-1.91 21.48L12 24l-8.59-2.52L1.5 0zm17.06 4.67H5.44l.28 3.12h12.55l-.33 3.73H5.94l.28 3.13h11.99l-.46 5.16L12 21.14l-5.17-1.3-.23-2.61H4.14l.43 4.88 7.43 1.95 7.43-1.95 1.13-12.72H18.56z"/>
+                </svg>
+                <span class="skill-name">CSS</span>
+              </div>
+              <span class="skill-tag-badge">Responsive</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Databases -->
+        <div class="skill-category-card reveal reveal-delay-2" data-category="databases">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--color-emerald);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <h3 class="skill-cat-title">Databases</h3>
+          </div>
+
+          <div class="skill-items-list">
+            <!-- MySQL -->
+            <div class="skill-pill-item">
+              <div class="skill-pill-left">
+                <svg class="skill-icon-svg" viewBox="0 0 24 24" fill="#00758f">
+                  <path d="M16.5 14c-1.5 0-2.8-.7-3.5-1.8-.7 1.1-2 1.8-3.5 1.8-2.5 0-4.5-2-4.5-4.5S7 5 9.5 5c1.5 0 2.8.7 3.5 1.8.7-1.1 2-1.8 3.5-1.8 2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5zm-7-7c-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5S10.9 7 9.5 7zm7 0c-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5S17.9 7 16.5 7z"/>
+                </svg>
+                <span class="skill-name">MySQL</span>
+              </div>
+              <span class="skill-tag-badge">Relational</span>
+            </div>
+
+            <!-- PostgreSQL -->
+            <div class="skill-pill-item">
+              <div class="skill-pill-left">
+                <svg class="skill-icon-svg" viewBox="0 0 24 24" fill="#336791">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16.93c-3.96-.48-7-3.85-7-7.93 0-.62.08-1.22.21-1.8l3.79 3.79V14c0 1.1.9 2 2 2v1.93zm5.9-3.24c-.45.32-.96.58-1.5.76-.25-.42-.6-.78-1.02-1.05-.28-.18-.59-.3-.91-.37.35-.69.53-1.46.53-2.28 0-.91-.25-1.77-.69-2.51.52-.39.95-.91 1.25-1.52.83.69 1.47 1.6 1.83 2.65.34 1.01.4 2.11.18 3.19-.06.39-.18.76-.33 1.13z"/>
+                </svg>
+                <span class="skill-name">PostgreSQL</span>
+              </div>
+              <span class="skill-tag-badge">SQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Data Analytics -->
+        <div class="skill-category-card reveal" data-category="analytics">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--color-amber);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+              </svg>
+            </div>
+            <h3 class="skill-cat-title">Data Analytics</h3>
+          </div>
+
+          <div class="skill-items-list">
+            <!-- Microsoft Excel -->
+            <div class="skill-pill-item">
+              <div class="skill-pill-left">
+                <svg class="skill-icon-svg" viewBox="0 0 24 24" fill="#107c41">
+                  <path d="M21.17 3.25Q21.5 3.4 21.75 3.65q.25.26.25.59v15.52q0 .33-.25.59t-.58.25H2.83q-.33 0-.58-.25T2 19.76V4.24q0-.33.25-.59t.58-.25h18.34M13.2 12l3.4-5.5h-2.3L12 10.1 9.7 6.5H7.4l3.4 5.5-3.5 5.5h2.3l2.4-3.8 2.4 3.8h2.3z"/>
+                </svg>
+                <span class="skill-name">Microsoft Excel</span>
+              </div>
+              <span class="skill-tag-badge">Formulas &amp; Dashboards</span>
+            </div>
+
+            <!-- Power BI -->
+            <div class="skill-pill-item">
+              <div class="skill-pill-left">
+                <svg class="skill-icon-svg" viewBox="0 0 24 24" fill="#f2c811">
+                  <path d="M7.5 10.5h3v9h-3zm4.5-4h3v13h-3zm4.5 7h3v6h-3zM3 14.5h3v5H3z"/>
+                </svg>
+                <span class="skill-name">Power BI</span>
+              </div>
+              <span class="skill-tag-badge">Visuals &amp; Reports</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Tools -->
+        <div class="skill-category-card reveal reveal-delay-1" data-category="tools">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon" style="background: rgba(168, 85, 247, 0.15); color: var(--color-purple);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            </div>
+            <h3 class="skill-cat-title">Tools</h3>
+          </div>
+
+          <div class="skill-items-list">
+            <!-- Visual Studio Code -->
+            <div class="skill-pill-item">
+              <div class="skill-pill-left">
+                <svg class="skill-icon-svg" viewBox="0 0 24 24" fill="#007acc">
+                  <path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .32 8.68l3.666 3.32-3.666 3.32a1 1 0 0 0 .007 1.419l1.322 1.202c.38.345.952.368 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.94-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/>
+                </svg>
+                <span class="skill-name">Visual Studio Code</span>
+              </div>
+              <span class="skill-tag-badge">Editor</span>
+            </div>
+
+            <!-- GitHub -->
+            <div class="skill-pill-item">
+              <div class="skill-pill-left">
+                <svg class="skill-icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span class="skill-name">GitHub</span>
+              </div>
+              <span class="skill-tag-badge">Version Control</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       6. PROJECTS SHOWCASE SECTION
+       ======================================================== -->
+  <section class="section" id="projects" style="background: rgba(255, 255, 255, 0.015);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+          <span>Projects</span>
+        </div>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        <p class="section-subtitle">
+          Practical projects in data analytics, Python, and dashboard reporting.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: Customer Complaint Data Analysis -->
+        <div class="project-card reveal">
+          <div class="project-banner">
+            <div class="project-banner-icon" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: #ffffff;">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <div class="project-meta-tags">
+              <span class="tech-tag">Microsoft Excel</span>
+              <span class="tech-tag">Data Cleaning</span>
+              <span class="tech-tag">Reporting</span>
+            </div>
+
+            <h3 class="project-title">Customer Complaint Data Analysis</h3>
+
+            <p class="project-desc">
+              Cleaned and analyzed customer complaint records in Microsoft Excel to identify common issues, response times, and department patterns.
+            </p>
+
+            <ul class="project-features-list">
+              <li class="project-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>VLOOKUP data lookup and mapping</span>
+              </li>
+              <li class="project-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pivot Tables to summarize complaint data</span>
+              </li>
+              <li class="project-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>SUM and COUNTIF formulas for totals and counts</span>
+              </li>
+              <li class="project-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Conditional Formatting to highlight urgent issues</span>
+              </li>
+            </ul>
+
+            <div class="project-card-footer">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Author: Balaji M</span>
+              <a href="https://github.com/balu250" target="_blank" rel="noopener noreferrer" class="github-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>GitHub Profile</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: E-Commerce Sales Analysis -->
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-banner">
+            <div class="project-banner-icon" style="background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%); color: #ffffff;">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <div class="project-meta-tags">
+              <span class="tech-tag">Microsoft Excel</span>
+              <span class="tech-tag">Interactive Dashboard</span>
+              <span class="tech-tag">Trend Analysis</span>
+            </div>
+
+            <h3 class="project-title">E-Commerce Sales Analysis</h3>
+
+            <p class="project-desc">
+              Built an interactive sales dashboard in Microsoft Excel using Pivot Tables, charts, and slicers to spot sales trends by product, region, and year.
+            </p>
+
+            <ul class="project-features-list">
+              <li class="project-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dynamic Pivot Tables and charts</span>
+              </li>
+              <li class="project-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Interactive slicers for fast filtering</span>
+              </li>
+              <li class="project-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Sales breakdown by product category</span>
+              </li>
+              <li class="project-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Regional and yearly sales trends</span>
+              </li>
+            </ul>
+
+            <div class="project-card-footer">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Author: Balaji M</span>
+              <a href="https://github.com/balu250" target="_blank" rel="noopener noreferrer" class="github-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>GitHub Profile</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: COVID-19 Global Data Analysis -->
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-banner">
+            <div class="project-banner-icon" style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: #ffffff;">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <div class="project-meta-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">Matplotlib</span>
+              <span class="tech-tag">Seaborn</span>
+            </div>
+
+            <h3 class="project-title">COVID-19 Global Data Analysis</h3>
+
+            <p class="project-desc">
+              Analyzed worldwide COVID-19 statistics including cases, recoveries, and trends using Python. Created visual charts to compare pandemic numbers across countries.
+            </p>
+
+            <ul class="project-features-list">
+              <li class="project-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Data cleaning and loading with Pandas</span>
+              </li>
+              <li class="project-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Exploratory analysis to spot global patterns</span>
+              </li>
+              <li class="project-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Country-by-country comparative analysis</span>
+              </li>
+              <li class="project-feature-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Visual graphs with Matplotlib and Seaborn</span>
+              </li>
+            </ul>
+
+            <div class="project-card-footer">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Author: Balaji M</span>
+              <a href="https://github.com/balu250" target="_blank" rel="noopener noreferrer" class="github-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>GitHub Profile</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       7. CERTIFICATIONS SECTION
+       ======================================================== -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+          <span>Certifications</span>
+        </div>
+        <h2 class="section-title">Certifications</h2>
+        <p class="section-subtitle">
+          Verified technical qualifications and completed training.
+        </p>
+      </div>
+
+      <div class="cert-container reveal">
+        <div class="cert-card">
+          <div class="cert-badge-icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+
+          <div>
+            <h3 class="cert-title">Python Programming</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 12px; font-size: 0.95rem;">
+              Practical knowledge of Python syntax, data structures, and script development.
+            </p>
+            <div class="cert-status-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Verified Certification</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       8. SOFT SKILLS SECTION
+       ======================================================== -->
+  <section class="section" id="soft-skills" style="background: rgba(255, 255, 255, 0.015);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <span>Key Strengths</span>
+        </div>
+        <h2 class="section-title">Soft <span class="gradient-text">Skills</span></h2>
+        <p class="section-subtitle">
+          Personal strengths and habits that help me work well with teams.
+        </p>
+      </div>
+
+      <div class="soft-skills-grid">
+        <!-- Interpersonal: Communication -->
+        <div class="soft-skill-card reveal">
+          <div class="soft-skill-icon-wrapper" style="background: rgba(99, 102, 241, 0.15); color: var(--color-primary);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <span class="soft-skill-category-tag">Interpersonal</span>
+          <h3 class="soft-skill-name">Communication</h3>
+          <p class="soft-skill-desc">
+            Expressing ideas clearly, listening carefully, and explaining project work simply.
+          </p>
+        </div>
+
+        <!-- Interpersonal: Teamwork -->
+        <div class="soft-skill-card reveal reveal-delay-1">
+          <div class="soft-skill-icon-wrapper" style="background: rgba(6, 182, 212, 0.15); color: var(--color-cyan);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <span class="soft-skill-category-tag">Interpersonal</span>
+          <h3 class="soft-skill-name">Teamwork</h3>
+          <p class="soft-skill-desc">
+            Working well with others to achieve shared goals and supporting teammates.
+          </p>
+        </div>
+
+        <!-- Leadership: Team Handling -->
+        <div class="soft-skill-card reveal reveal-delay-2">
+          <div class="soft-skill-icon-wrapper" style="background: rgba(168, 85, 247, 0.15); color: var(--color-purple);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <polyline points="16 11 18 13 22 9"></polyline>
+            </svg>
+          </div>
+          <span class="soft-skill-category-tag">Leadership</span>
+          <h3 class="soft-skill-name">Team Handling</h3>
+          <p class="soft-skill-desc">
+            Helping group members stay organized and solving challenges together.
+          </p>
+        </div>
+
+        <!-- Leadership: Leadership -->
+        <div class="soft-skill-card reveal">
+          <div class="soft-skill-icon-wrapper" style="background: rgba(236, 72, 153, 0.15); color: var(--color-pink);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <span class="soft-skill-category-tag">Leadership</span>
+          <h3 class="soft-skill-name">Leadership</h3>
+          <p class="soft-skill-desc">
+            Taking initiative, staying responsible, and helping projects finish on time.
+          </p>
+        </div>
+
+        <!-- Professional: Multi-tasking -->
+        <div class="soft-skill-card reveal reveal-delay-1">
+          <div class="soft-skill-icon-wrapper" style="background: rgba(168, 85, 247, 0.15); color: var(--color-purple);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <span class="soft-skill-category-tag">Professional</span>
+          <h3 class="soft-skill-name">Multi-tasking</h3>
+          <p class="soft-skill-desc">
+            Managing coursework, coding projects, and tasks smoothly in parallel.
+          </p>
+        </div>
+
+        <!-- Professional: Time Management -->
+        <div class="soft-skill-card reveal reveal-delay-2">
+          <div class="soft-skill-icon-wrapper" style="background: rgba(245, 158, 11, 0.15); color: var(--color-amber);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <span class="soft-skill-category-tag">Professional</span>
+          <h3 class="soft-skill-name">Time Management</h3>
+          <p class="soft-skill-desc">
+            Planning ahead, setting priorities, and delivering work reliably on schedule.
+          </p>
+        </div>
+
+        <!-- Professional: Project Management -->
+        <div class="soft-skill-card reveal">
+          <div class="soft-skill-icon-wrapper" style="background: rgba(56, 189, 248, 0.15); color: var(--color-cyan);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <span class="soft-skill-category-tag">Professional</span>
+          <h3 class="soft-skill-name">Project Management</h3>
+          <p class="soft-skill-desc">
+            Structuring project steps from start to finish with clear milestones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       9. CONTACT SECTION & MESSAGE FORM
+       ======================================================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>Get In Touch</span>
+        </div>
+        <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+        <p class="section-subtitle">
+          Feel free to reach out for opportunities, projects, or collaborations.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left: Direct Contact Information -->
+        <div class="contact-info-panel reveal">
+          <h3 class="contact-info-title">Contact Details</h3>
+          <p class="contact-info-subtitle">
+            I am always happy to discuss projects, ideas, or opportunities. Reach out anytime.
+          </p>
+
+          <div class="contact-channels-list">
+            <!-- Email -->
+            <a href="mailto:balajisheety08@gmail.com" class="contact-channel-item">
+              <div class="channel-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <span class="channel-label">Email</span>
+                <div class="channel-value">balajisheety08@gmail.com</div>
+              </div>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+919335352300" class="contact-channel-item">
+              <div class="channel-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="channel-label">Phone</span>
+                <div class="channel-value">+91 9335352300</div>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <div class="contact-channel-item">
+              <div class="channel-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <span class="channel-label">Location</span>
+                <div class="channel-value">Bangalore, India</div>
+              </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/balaji-m" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+              <div class="channel-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="channel-label">LinkedIn</span>
+                <div class="channel-value">Balaji M</div>
+              </div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/balu250" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+              <div class="channel-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="channel-label">GitHub</span>
+                <div class="channel-value">balu250</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Message Form -->
+        <div class="contact-form-panel reveal reveal-delay-1">
+          <h3 class="form-title">Send a Message</h3>
+          <p class="form-subtitle">Send a message and I will reply as soon as possible.</p>
+
+          <!-- Alert Notification Box -->
+          <div id="formAlert" class="form-alert" role="alert"></div>
+
+          <form id="contactForm" novalidate>
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name <span class="req">*</span></label>
+              <div class="input-container">
+                <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required autocomplete="name">
+                <span class="form-error-msg">Please enter your name.</span>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address <span class="req">*</span></label>
+              <div class="input-container">
+                <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required autocomplete="email">
+                <span class="form-error-msg">Please enter a valid email address.</span>
+              </div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone Number <span class="req">*</span></label>
+              <div class="input-container">
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 9335352300" required autocomplete="tel">
+                <span class="form-error-msg">Please enter your phone number.</span>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label for="message" class="form-label">Your Message <span class="req">*</span></label>
+              <div class="input-container">
+                <textarea id="message" name="message" class="form-textarea" placeholder="How can I help you?" required></textarea>
+                <span class="form-error-msg">Please enter your message.</span>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submitBtn" class="btn btn-primary form-submit-btn">
+              <span class="btn-spinner" id="btnSpinner"></span>
+              <span id="btnText">Send Message</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       10. FOOTER
+       ======================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="gradient-text">Balaji M</span>
+          <span style="display: block; font-size: 0.88rem; font-weight: 400; color: var(--text-muted); margin-top: 4px;">
+            Information Science &amp; Technology Student | Presidency University
+          </span>
+        </div>
+
+        <div class="footer-social-links">
+          <a href="https://github.com/balu250" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="GitHub Profile" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/balaji-m" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="LinkedIn Profile" title="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="mailto:balajisheety08@gmail.com" class="social-circle-link" aria-label="Send Email" title="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+          <a href="tel:+919335352300" class="social-circle-link" aria-label="Call Phone" title="Phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Balaji M. All rights reserved.</p>
+        <p style="margin-top: 4px; font-size: 0.82rem;">Built with HTML, CSS, JavaScript and Node.js</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top" title="Back to top">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Interactive JavaScript Script -->
+  <script src="script.js"></script>
 </body>
 </html>
