@@ -1,4 +1,5 @@
 /**
+ * Database connection setup for Balaji M Portfolio
  * Uses mysql2 connection pooling with promises and parameterized queries.
  */
 

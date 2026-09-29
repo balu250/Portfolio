@@ -205,9 +205,9 @@ npm start
 - **Institution**: Presidency University, India (2023 – 2027) | CGPA: 7.15/10
 - **Location**: Bangalore, India
 - **Email**: [balajisheety08@gmail.com](mailto:balajisheety08@gmail.com)
-- **Phone**: [+91 9335352300](tel:+919335352300)
+- **Phone**: [+91 9353525300](tel:+919353525300)
 - **GitHub**: [github.com/balu250](https://github.com/balu250)
-- **LinkedIn**: Balaji M
+- **LinkedIn**: [Balaji M](https://www.linkedin.com/in/balaji-m-4a515a296/)
 - **License**: ISC License © 2026 Balaji M
 "# Portfolio" 
 "# port" 
