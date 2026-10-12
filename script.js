@@ -192,9 +192,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const EMAIL_PATTERN = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const PHONE_PATTERN = /^[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]{6,20}$/;
 
-  // Determine API URL (Supports direct file preview or Express server)
-  const isDirectServer = window.location.port === '5000';
-  const API_URL = isDirectServer ? '/api/contact' : 'http://localhost:5000/api/contact';
+  // Determine API URL:
+  // On Vercel or any deployed domain, use '/api/contact' to hit the serverless function.
+  // When previewing via Live Server (port 5500), route to local backend (port 5000).
+  const isLocalLiveServer = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && window.location.port === '5500';
+  const API_URL = isLocalLiveServer ? 'http://localhost:5000/api/contact' : '/api/contact';
 
   if (contactForm) {
     // Real-time error clearance on input
@@ -278,26 +280,14 @@ document.addEventListener('DOMContentLoaded', () => {
           showAlert(data.message || 'Thank you! Your message has been sent. Balaji will get back to you soon!', 'success');
           contactForm.reset();
         } else {
-          // Polite user-friendly fallback
-          showAlert(data.message || 'Thank you! Your message has been sent. Balaji will get back to you soon!', 'success');
-          contactForm.reset();
+          showAlert(data.message || 'Unable to send message. Please try again or reach out directly.', 'error');
         }
       } catch (err) {
-        // Graceful fallback for Vercel static deployment
-        try {
-          const savedMessages = JSON.parse(localStorage.getItem('portfolio_messages') || '[]');
-          savedMessages.push({ ...formData, timestamp: new Date().toISOString() });
-          localStorage.setItem('portfolio_messages', JSON.stringify(savedMessages));
-        } catch (storageErr) {
-          // ignore
-        }
-
-        // Always show a polite, welcoming confirmation to the client
+        console.error('Contact form submission error:', err);
         showAlert(
-          'Thank you! Your message has been sent. Balaji will get back to you soon!',
-          'success'
+          'Unable to reach server. Please reach out directly to balajisheety08@gmail.com.',
+          'error'
         );
-        contactForm.reset();
       } finally {
         setLoading(false);
       }
