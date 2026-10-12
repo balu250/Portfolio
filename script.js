@@ -7,7 +7,7 @@
  * - Interactive Skills Category Filtering
  * - Scroll Reveal Animations (IntersectionObserver)
  * - Back to Top Floating Button
- * - Contact Form Validation & Asynchronous Backend API Submission (MySQL)
+ * - Contact Form Validation & Asynchronous Backend API Submission (PostgreSQL)
  */
 
 document.addEventListener('DOMContentLoaded', () => {

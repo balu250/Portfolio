@@ -1,8 +1,8 @@
 # Balaji M - Personal Portfolio Website
 
-A modern, colorful, professional, and responsive developer & data analytics portfolio website built with **HTML5, CSS3, JavaScript (ES6+), Node.js, Express, and MySQL**.
+A modern, colorful, professional, and responsive developer & data analytics portfolio website built with **HTML5, CSS3, JavaScript (ES6+), Node.js, Express, and PostgreSQL**.
 
-Designed with **glassmorphism aesthetics**, dynamic dark/light mode switching, responsive navigation, interactive category filtering, scroll animations, and a full-stack contact form connected to a MySQL database.
+Designed with **glassmorphism aesthetics**, dynamic dark/light mode switching, responsive navigation, interactive category filtering, scroll animations, and a full-stack contact form connected to a PostgreSQL database.
 
 ---
 
@@ -15,9 +15,9 @@ Designed with **glassmorphism aesthetics**, dynamic dark/light mode switching, r
 - **Sticky Navbar with ScrollSpy**: Active link indicator that highlights sections dynamically as you scroll.
 - **Interactive Skills Section**: Categorized into Programming, Web, Databases, Analytics, and Tools with instant filtering tabs.
 - **Showcase Projects**: Detailed cards for Excel and Python projects featuring key analytical features and GitHub buttons.
-- **Live Contact Form with MySQL Backend**:
+- **Live Contact Form with PostgreSQL Backend**:
   - Full client-side JavaScript validation (name, email, phone, message).
-  - Parameterized SQL queries using `mysql2/promise` to prevent SQL injection.
+  - Parameterized SQL queries using `pg` (node-postgres) to prevent SQL injection.
   - Express REST API with graceful error handling and friendly feedback.
 - **Back to Top Floating Action**: Quick smooth scroll to top with reveal animations.
 
@@ -35,13 +35,13 @@ portfolio/
 │
 ├── backend/
 │   ├── server.js           # Express API server & static file host
-│   ├── db.js               # MySQL connection pool configuration
+│   ├── db.js               # PostgreSQL connection pool configuration (pg)
 │   ├── package.json        # Dependencies and scripts
 │   ├── .env                # Local environment variables
 │   └── .env.example        # Environment variables template
 │
 ├── database/
-│   └── database.sql        # MySQL table schema and database setup script
+│   └── database.sql        # PostgreSQL table schema and setup script
 │
 └── README.md               # Complete setup, execution, and API guide
 ```
@@ -58,55 +58,65 @@ portfolio/
 ### Backend
 - **Node.js**: Runtime environment (v16+ recommended).
 - **Express.js**: Lightweight REST API server.
-- **MySQL2**: Connection pooling with Promise API and parameterized queries.
+- **pg (node-postgres)**: Connection pooling and parameterized queries for PostgreSQL.
 - **Cors & Dotenv**: Cross-Origin Resource Sharing and secure environment variable handling.
 
 ### Database
-- **MySQL 5.7+ / 8.0+** or MariaDB.
+- **PostgreSQL 12+ / 14+ / 15+ / 16+** (Local installation or free cloud instances: Neon, Supabase, Render, Railway, AWS RDS).
 
 ---
 
 ## 🚀 Quick Start Guide
 
-### Step 1: Set Up MySQL Database
+### Step 1: Set Up PostgreSQL Database
 
-1. Open your MySQL client (MySQL Workbench, phpMyAdmin, or Command Line):
+#### Option A: Using Local PostgreSQL (psql or pgAdmin)
+1. Open your terminal or `psql`:
    ```bash
-   mysql -u root -p
+   psql -U postgres
    ```
-2. Run the script provided in `database/database.sql`:
+2. Create the database and contacts table:
    ```sql
-   SOURCE c:/Users/dell/OneDrive/Desktop/Portfolio/database/database.sql;
-   ```
-   Or copy and paste the contents into your MySQL console:
-   ```sql
-   CREATE DATABASE IF NOT EXISTS portfolio_db;
-   USE portfolio_db;
+   CREATE DATABASE portfolio_db;
+   \c portfolio_db
 
    CREATE TABLE IF NOT EXISTS contacts (
-       id INT AUTO_INCREMENT PRIMARY KEY,
+       id SERIAL PRIMARY KEY,
        name VARCHAR(150) NOT NULL,
        email VARCHAR(255) NOT NULL,
        phone VARCHAR(30) NOT NULL,
        message TEXT NOT NULL,
-       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+       created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+   );
    ```
+
+#### Option B: Using Free Cloud PostgreSQL (Neon, Supabase, Render)
+1. Create a free PostgreSQL database on [Neon.tech](https://neon.tech) or [Supabase.com](https://supabase.com).
+2. Copy your connection URL (e.g. `postgresql://user:pass@ep-xyz.neon.tech/portfolio_db?sslmode=require`).
+3. Run the SQL schema from `database/database.sql` in their SQL Editor.
 
 ---
 
 ### Step 2: Configure Backend Environment Variables
 
 1. Navigate to the `backend/` folder.
-2. Verify or edit the `.env` file with your local MySQL credentials:
+2. Edit `.env` with your PostgreSQL credentials:
+
+   **For Local PostgreSQL:**
    ```env
    PORT=5000
    DB_HOST=localhost
-   DB_PORT=3306
-   DB_USER=root
-   DB_PASSWORD=your_mysql_password
+   DB_PORT=5432
+   DB_USER=postgres
+   DB_PASSWORD=your_postgres_password
    DB_NAME=portfolio_db
+   DB_SSL=false
    ```
+
+   **Or using a Cloud Database URL (Neon / Supabase / Render):**
+   ```env
+   PORT=5000
+   DATABASE_URL=postgresql://user:password@ep-xyz.neon.tech/portfolio_db?sslmode=require
 
 ---
 
@@ -190,7 +200,7 @@ npm start
 
 ## 🔒 Security Best Practices Implemented
 
-1. **SQL Injection Prevention**: All queries to the MySQL database use parameterized statements (`?` placeholders via `mysql2`).
+1. **SQL Injection Prevention**: All queries to the PostgreSQL database use parameterized statements (`$1, $2, $3, $4` placeholders via `pg`).
 2. **Credential Isolation**: Database passwords and server ports are stored exclusively in `.env` and are never exposed to client-side code.
 3. **Double Validation**: Form input is validated on the client side for instant user feedback and re-validated on the backend server for integrity.
 4. **CORS Configuration**: Restricts methods to `GET`, `POST`, `OPTIONS`.

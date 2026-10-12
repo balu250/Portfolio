@@ -41,12 +41,12 @@ const PHONE_REGEX = /^[+]?[(]?[0-9]{1,4}[)]?[-\s./0-9]{6,20}$/;
 app.get('/api/health', async (req, res) => {
   let dbStatus = 'disconnected';
   try {
-    const [rows] = await pool.query('SELECT 1 AS health');
-    if (rows && rows[0]?.health === 1) {
+    const result = await pool.query('SELECT 1 AS health');
+    if (result && result.rows && result.rows[0]?.health == 1) {
       dbStatus = 'connected';
     }
   } catch (err) {
-    dbStatus = 'error: ' + err.code;
+    dbStatus = 'error: ' + (err.code || err.message);
   }
 
   res.status(200).json({
@@ -61,7 +61,7 @@ app.get('/api/health', async (req, res) => {
  * Contact Message Submission Endpoint
  * POST /api/contact
  * Receives: { name, email, phone, message }
- * Stores in MySQL contacts table using parameterized query
+ * Stores in PostgreSQL contacts table using parameterized query
  */
 app.post('/api/contact', async (req, res) => {
   try {
@@ -113,13 +113,14 @@ app.post('/api/contact', async (req, res) => {
     const cleanPhone = phone.trim();
     const cleanMessage = message.trim();
 
-    // 2. Insert into MySQL contacts table using parameterized queries (prevents SQL injection)
+    // 2. Insert into PostgreSQL contacts table using parameterized queries (prevents SQL injection)
     const insertQuery = `
       INSERT INTO contacts (name, email, phone, message, created_at)
-      VALUES (?, ?, ?, ?, NOW())
+      VALUES ($1, $2, $3, $4, NOW())
+      RETURNING id
     `;
 
-    const [result] = await pool.execute(insertQuery, [
+    const result = await pool.query(insertQuery, [
       cleanName,
       cleanEmail,
       cleanPhone,
@@ -130,17 +131,17 @@ app.post('/api/contact', async (req, res) => {
     return res.status(201).json({
       success: true,
       message: 'Thank you, Balaji M has received your message and will get back to you shortly!',
-      contactId: result.insertId
+      contactId: result.rows[0]?.id
     });
 
   } catch (error) {
     console.error('Error handling /api/contact:', error.message);
 
     // Provide helpful message depending on error type without exposing sensitive credentials
-    if (error.code === 'ECONNREFUSED' || error.code === 'PROTOCOL_CONNECTION_LOST' || error.code === 'ER_BAD_DB_ERROR') {
+    if (error.code === 'ECONNREFUSED' || error.code === '28P01' || error.code === '3D000') {
       return res.status(503).json({
         success: false,
-        message: 'The database server is currently unreachable. Please make sure MySQL is running and the "portfolio_db" database has been created.',
+        message: 'The database server is currently unreachable. Please make sure PostgreSQL is running and the "portfolio_db" database has been created.',
         errorCode: error.code
       });
     }
@@ -164,6 +165,6 @@ app.listen(PORT, async () => {
   console.log(`🌐 Local URL: http://localhost:${PORT}`);
   console.log(`📡 Contact API: http://localhost:${PORT}/api/contact`);
   
-  // Test connection to MySQL database
+  // Test connection to PostgreSQL database
   await testConnection();
 });
